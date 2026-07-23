@@ -109,7 +109,7 @@
    PLAT DU JOUR
    ============================================ */
 .plat-du-jour {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #f4941e 100%);
+  background: transparent;
   border-radius: 1rem;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -118,6 +118,7 @@
   overflow: hidden;
   color: white;
   animation: slideUp 0.6s ease-out;
+  text-align: center;
 }
 
 .plat-du-jour::before {
@@ -141,6 +142,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
   backdrop-filter: blur(10px);
+  animation: blink 1.5s ease-in-out infinite;
 }
 
 .plat-du-jour-content {
@@ -586,6 +588,16 @@
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
   }
 }
 

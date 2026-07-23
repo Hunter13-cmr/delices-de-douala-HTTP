@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.css"],
+  "sourcesContent": [":root{\r\n\r\n    --primary:#2E7D32;\r\n\r\n    --secondary:#FBC02D;\r\n\r\n    --danger:#C62828;\r\n\r\n    --background:#f5f5f5;\r\n\r\n    --card:#ffffff;\r\n\r\n    --text:#333;\r\n\r\n    --star:#FFC107;\r\n\r\n    --shadow:0 8px 20px rgba(0,0,0,.12);\r\n\r\n    --radius:16px;\r\n\r\n}\r\n\r\n*{\r\n\r\n    margin:0;\r\n\r\n    padding:0;\r\n\r\n    box-sizing:border-box;\r\n\r\n}\r\n\r\nbody{\r\n\r\n    font-family:'Poppins',sans-serif;\r\n\r\n    background:var(--background);\r\n\r\n    color:var(--text);\r\n\r\n}"],
+  "mappings": ";AAAA;AAEI,YAAU;AAEV,cAAY;AAEZ,WAAS;AAET,eAAa;AAEb,SAAO;AAEP,SAAO;AAEP,SAAO;AAEP,WAAS,EAAE,IAAI,KAAK,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAE/B,WAAS;AAEb;AAEA;AAEI,UAAO;AAEP,WAAQ;AAER,cAAW;AAEf;AAEA;AAEI,eAAY,SAAS,EAAC;AAEtB,cAAW,IAAI;AAEf,SAAM,IAAI;AAEd;",
+  "names": []
+}

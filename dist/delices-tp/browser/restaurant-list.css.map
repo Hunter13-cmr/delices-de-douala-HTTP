@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/restaurant-list/restaurant-list.css"],
+  "sourcesContent": [".restaurant-grid{\r\n\r\n    display:grid;\r\n\r\n    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));\r\n\r\n    gap:26px;\r\n\r\n}"],
+  "mappings": ";AAAA,CAAC;AAEG,WAAQ;AAER,yBAAsB,OAAO,QAAQ,EAAC,OAAO,KAAK,EAAC;AAEnD,OAAI;AAER;",
+  "names": []
+}

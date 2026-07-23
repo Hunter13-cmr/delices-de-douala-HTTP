@@ -1,0 +1,572 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>DelicesTp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"><style ng-app-id="ng">
+*[_ngcontent-ng-c3984273398] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html[_ngcontent-ng-c3984273398], 
+body[_ngcontent-ng-c3984273398] {
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+[_nghost-ng-c3984273398] {
+  display: block;
+}
+/*# sourceMappingURL=/app.css.map */</style><style ng-app-id="ng">
+[_nghost-ng-c766028351] {
+  --primary-color: #d4522f;
+  --primary-light: #e85c3c;
+  --primary-dark: #b83d23;
+  --secondary-color: #f5a623;
+  --success-color: #27ae60;
+  --error-color: #e74c3c;
+  --warning-color: #f39c12;
+  --bg-color: #f8f6f1;
+  --surface-color: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --border-color: #ecf0f1;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --transition-fast: 200ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+}
+*[_ngcontent-ng-c766028351] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+[_nghost-ng-c766028351] {
+  display: block;
+  background:
+    linear-gradient(
+      135deg,
+      var(--bg-color) 0%,
+      #faf8f4 100%);
+  min-height: 100vh;
+  font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+  color: var(--text-primary);
+}
+.header[_ngcontent-ng-c766028351] {
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--primary-dark) 100%);
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.header[_ngcontent-ng-c766028351]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%);
+  pointer-events: none;
+}
+.header-content[_ngcontent-ng-c766028351] {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.title[_ngcontent-ng-c766028351] {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  animation: _ngcontent-ng-c766028351_slideDown 0.6s ease-out;
+}
+.subtitle[_ngcontent-ng-c766028351] {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  font-weight: 300;
+  animation: _ngcontent-ng-c766028351_slideUp 0.6s ease-out 0.1s both;
+}
+.container[_ngcontent-ng-c766028351] {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.plat-du-jour[_ngcontent-ng-c766028351] {
+  background:
+    linear-gradient(
+      135deg,
+      var(--secondary-color) 0%,
+      #f4941e 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  color: white;
+  animation: _ngcontent-ng-c766028351_slideUp 0.6s ease-out;
+}
+.plat-du-jour[_ngcontent-ng-c766028351]::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: _ngcontent-ng-c766028351_float 6s ease-in-out infinite;
+}
+.plat-du-jour-badge[_ngcontent-ng-c766028351] {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.plat-du-jour-content[_ngcontent-ng-c766028351] {
+  position: relative;
+  z-index: 1;
+}
+.plat-du-jour[_ngcontent-ng-c766028351]   h2[_ngcontent-ng-c766028351] {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.category-badge[_ngcontent-ng-c766028351] {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.plat-du-jour[_ngcontent-ng-c766028351]   .price[_ngcontent-ng-c766028351] {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.status-plat-jour[_ngcontent-ng-c766028351] {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.status-plat-jour.available[_ngcontent-ng-c766028351] {
+  color: #2ecc71;
+}
+.status-plat-jour.unavailable[_ngcontent-ng-c766028351] {
+  color: #e8daef;
+}
+.filters-section[_ngcontent-ng-c766028351] {
+  background: var(--surface-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  animation: _ngcontent-ng-c766028351_slideUp 0.6s ease-out 0.2s both;
+}
+.search-box[_ngcontent-ng-c766028351] {
+  margin-bottom: 1.5rem;
+}
+.search-input[_ngcontent-ng-c766028351] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.search-input[_ngcontent-ng-c766028351]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(212, 82, 47, 0.1);
+}
+.categories-filter[_ngcontent-ng-c766028351] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.category-btn[_ngcontent-ng-c766028351] {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  background: white;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.category-btn[_ngcontent-ng-c766028351]:hover {
+  border-color: var(--primary-color);
+  background: rgba(212, 82, 47, 0.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.category-btn.active[_ngcontent-ng-c766028351] {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+.reset-btn[_ngcontent-ng-c766028351] {
+  padding: 0.5rem 1rem;
+  background: var(--warning-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.reset-btn[_ngcontent-ng-c766028351]:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.loading-state[_ngcontent-ng-c766028351], 
+.error-state[_ngcontent-ng-c766028351], 
+.empty-state[_ngcontent-ng-c766028351] {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--surface-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.spinner[_ngcontent-ng-c766028351] {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1.5rem;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: _ngcontent-ng-c766028351_spin 0.8s linear infinite;
+}
+.error-icon[_ngcontent-ng-c766028351], 
+.empty-icon[_ngcontent-ng-c766028351] {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.error-state[_ngcontent-ng-c766028351]   h2[_ngcontent-ng-c766028351], 
+.empty-state[_ngcontent-ng-c766028351]   h2[_ngcontent-ng-c766028351] {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+.error-state[_ngcontent-ng-c766028351]   p[_ngcontent-ng-c766028351], 
+.empty-state[_ngcontent-ng-c766028351]   p[_ngcontent-ng-c766028351] {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+.retry-btn[_ngcontent-ng-c766028351] {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.retry-btn[_ngcontent-ng-c766028351]:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.stats-bar[_ngcontent-ng-c766028351] {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: var(--surface-color);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.stat[_ngcontent-ng-c766028351] {
+  color: var(--primary-color);
+}
+.unavailable-stat[_ngcontent-ng-c766028351] {
+  color: var(--error-color);
+}
+.plats-grid[_ngcontent-ng-c766028351] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  animation: _ngcontent-ng-c766028351_fadeIn 0.6s ease-out 0.3s both;
+}
+@media (max-width: 768px) {
+  .plats-grid[_ngcontent-ng-c766028351] {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+.plat-card[_ngcontent-ng-c766028351] {
+  background: var(--surface-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  border: 2px solid transparent;
+  animation: _ngcontent-ng-c766028351_cardAppear 0.5s ease-out;
+}
+.plat-card[_ngcontent-ng-c766028351]:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+.plat-card.plat-indisponible[_ngcontent-ng-c766028351] {
+  opacity: 0.65;
+}
+.plat-card.plat-indisponible[_ngcontent-ng-c766028351]   .plat-content[_ngcontent-ng-c766028351] {
+  filter: grayscale(30%);
+}
+.badge-epuise[_ngcontent-ng-c766028351] {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--error-color);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+.plat-image-container[_ngcontent-ng-c766028351] {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.plat-image[_ngcontent-ng-c766028351] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+  display: block;
+}
+.plat-card[_ngcontent-ng-c766028351]:hover   .plat-image[_ngcontent-ng-c766028351] {
+  transform: scale(1.08);
+}
+.plat-indisponible[_ngcontent-ng-c766028351]   .plat-image[_ngcontent-ng-c766028351] {
+  opacity: 0.6;
+  filter: grayscale(60%);
+}
+.plat-du-jour-image[_ngcontent-ng-c766028351] {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-md);
+}
+.plat-content[_ngcontent-ng-c766028351] {
+  padding: 1.25rem;
+  transition: all var(--transition-base);
+}
+.plat-nom[_ngcontent-ng-c766028351] {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.plat-categorie[_ngcontent-ng-c766028351] {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.plat-footer[_ngcontent-ng-c766028351] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.plat-prix[_ngcontent-ng-c766028351] {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.plat-status[_ngcontent-ng-c766028351] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.plat-status.available[_ngcontent-ng-c766028351] {
+  background: rgba(39, 174, 96, 0.2);
+  color: var(--success-color);
+}
+.plat-status.unavailable[_ngcontent-ng-c766028351] {
+  background: rgba(231, 76, 60, 0.2);
+  color: var(--error-color);
+}
+.footer[_ngcontent-ng-c766028351] {
+  background:
+    linear-gradient(
+      135deg,
+      var(--text-primary) 0%,
+      #34495e 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+.footer[_ngcontent-ng-c766028351]   p[_ngcontent-ng-c766028351] {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+.footer-email[_ngcontent-ng-c766028351] {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+@keyframes _ngcontent-ng-c766028351_slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes _ngcontent-ng-c766028351_slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes _ngcontent-ng-c766028351_fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes _ngcontent-ng-c766028351_spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes _ngcontent-ng-c766028351_cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes _ngcontent-ng-c766028351_float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@media (max-width: 768px) {
+  .title[_ngcontent-ng-c766028351] {
+    font-size: 1.8rem;
+  }
+  .subtitle[_ngcontent-ng-c766028351] {
+    font-size: 1rem;
+  }
+  .header[_ngcontent-ng-c766028351] {
+    padding: 2rem 1rem;
+  }
+  .container[_ngcontent-ng-c766028351] {
+    padding: 2rem 1rem;
+  }
+  .plat-du-jour[_ngcontent-ng-c766028351] {
+    padding: 1.5rem;
+  }
+  .plat-du-jour[_ngcontent-ng-c766028351]   h2[_ngcontent-ng-c766028351] {
+    font-size: 1.4rem;
+  }
+  .categories-filter[_ngcontent-ng-c766028351] {
+    gap: 0.5rem;
+  }
+  .category-btn[_ngcontent-ng-c766028351] {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .stats-bar[_ngcontent-ng-c766028351] {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  .title[_ngcontent-ng-c766028351] {
+    font-size: 1.5rem;
+  }
+  .plats-grid[_ngcontent-ng-c766028351] {
+    grid-template-columns: 1fr;
+  }
+  .stats-bar[_ngcontent-ng-c766028351] {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters-section[_ngcontent-ng-c766028351] {
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=/carte.component.css.map */</style></head>
+<body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["input","compositionstart","compositionend","click"],["blur"]);</script>
+  <app-root ng-version="22.0.4" _nghost-ng-c3984273398="" ngh="1" ng-server-context="ssg"><app-carte _ngcontent-ng-c3984273398="" _nghost-ng-c766028351="" ngh="0"><header _ngcontent-ng-c766028351="" class="header"><div _ngcontent-ng-c766028351="" class="header-content"><h1 _ngcontent-ng-c766028351="" class="title">🍽️ Délices de Douala (Dev)</h1><p _ngcontent-ng-c766028351="" class="subtitle">Découvrez les saveurs authentiques de Douala</p></div></header><main _ngcontent-ng-c766028351="" class="container"><section _ngcontent-ng-c766028351="" class="plat-du-jour"><div _ngcontent-ng-c766028351="" class="plat-du-jour-badge">⭐ Plat du jour</div><div _ngcontent-ng-c766028351="" class="plat-du-jour-content"><img _ngcontent-ng-c766028351="" class="plat-du-jour-image" src="/images/ndole-crevettes.jpg" alt="Ndolè aux crevettes"><!--container--><h2 _ngcontent-ng-c766028351="">Ndolè aux crevettes</h2><p _ngcontent-ng-c766028351="" class="category-badge">Plats</p><p _ngcontent-ng-c766028351="" class="price"> FCFA3,500 </p><p _ngcontent-ng-c766028351="" class="status-plat-jour available"> ✓ Disponible </p></div></section><!--container--><section _ngcontent-ng-c766028351="" class="filters-section"><div _ngcontent-ng-c766028351="" class="search-box"><input _ngcontent-ng-c766028351="" type="text" placeholder="🔍 Chercher un plat..." class="search-input ng-untouched ng-pristine ng-valid" value="" jsaction="input:;blur:;compositionstart:;compositionend:;"></div><div _ngcontent-ng-c766028351="" class="categories-filter"><button _ngcontent-ng-c766028351="" class="category-btn active" jsaction="click:;"> Toutes </button><button _ngcontent-ng-c766028351="" class="category-btn" jsaction="click:;"> Plats </button><button _ngcontent-ng-c766028351="" class="category-btn" jsaction="click:;"> Grillades </button><button _ngcontent-ng-c766028351="" class="category-btn" jsaction="click:;"> Végétarien </button><button _ngcontent-ng-c766028351="" class="category-btn" jsaction="click:;"> Boissons </button><!--container--></div><!--container--></section><!--container--><!--container--><div _ngcontent-ng-c766028351="" class="stats-bar"><span _ngcontent-ng-c766028351="" class="stat">📊 7 plat(s) trouvé(s)</span><span _ngcontent-ng-c766028351="" class="stat unavailable-stat"> ⭕ 1 indisponible(s) </span><!--container--></div><!--container--><section _ngcontent-ng-c766028351="" class="plats-grid"><article _ngcontent-ng-c766028351="" class="plat-card plat-disponible"><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/ndole-crevettes.jpg" alt="Ndolè aux crevettes"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Ndolè aux crevettes</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Plats</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA3,500 </span><span _ngcontent-ng-c766028351="" class="plat-status available"> ✓ </span></div></div></article><article _ngcontent-ng-c766028351="" class="plat-card plat-disponible"><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/poulet-dg.jpg" alt="Poulet DG"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Poulet DG</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Plats</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA4,000 </span><span _ngcontent-ng-c766028351="" class="plat-status available"> ✓ </span></div></div></article><article _ngcontent-ng-c766028351="" class="plat-card plat-disponible"><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/poisson-braise.jpg" alt="Poisson braisé + miondo"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Poisson braisé + miondo</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Grillades</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA3,000 </span><span _ngcontent-ng-c766028351="" class="plat-status available"> ✓ </span></div></div></article><article _ngcontent-ng-c766028351="" class="plat-card plat-disponible"><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/eru-pieds-boeuf.jpg" alt="Eru + water fufu"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Eru + water fufu</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Plats</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA2,500 </span><span _ngcontent-ng-c766028351="" class="plat-status available"> ✓ </span></div></div></article><article _ngcontent-ng-c766028351="" class="plat-card plat-disponible"><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/koki-plantain.jpg" alt="Koki + plantain mûr"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Koki + plantain mûr</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Végétarien</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA2,000 </span><span _ngcontent-ng-c766028351="" class="plat-status available"> ✓ </span></div></div></article><article _ngcontent-ng-c766028351="" class="plat-card plat-disponible"><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/bobolo-sauce-arachide.jpg" alt="Jus de bissap"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Jus de bissap</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Boissons</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA1,000 </span><span _ngcontent-ng-c766028351="" class="plat-status available"> ✓ </span></div></div></article><article _ngcontent-ng-c766028351="" class="plat-card plat-indisponible"><div _ngcontent-ng-c766028351="" class="badge-epuise">Épuisé</div><!--container--><div _ngcontent-ng-c766028351="" class="plat-image-container"><img _ngcontent-ng-c766028351="" class="plat-image" src="/images/poulets.jpg" alt="Jus de gingembre"></div><!--container--><div _ngcontent-ng-c766028351="" class="plat-content"><h3 _ngcontent-ng-c766028351="" class="plat-nom">Jus de gingembre</h3><p _ngcontent-ng-c766028351="" class="plat-categorie">Boissons</p><div _ngcontent-ng-c766028351="" class="plat-footer"><span _ngcontent-ng-c766028351="" class="plat-prix"> FCFA1,000 </span><span _ngcontent-ng-c766028351="" class="plat-status unavailable"> ✕ </span></div></div></article><!--container--></section><!--container--></main><footer _ngcontent-ng-c766028351="" class="footer"><p _ngcontent-ng-c766028351="">© 2026 Délices de Douala - Tous droits réservés</p><p _ngcontent-ng-c766028351="" class="footer-email">📧 contact@delices-douala.cm</p></footer></app-carte></app-root>
+<script src="main.js" type="module"></script>
+
+<script id="ng-state" type="application/json">{"1ac7b8a21aa90f76f89097e797e9495c40a39c86bd7d03caecaf2e1d8736a0f0":{"b":[{"id":"d1","nom":"Ndolè aux crevettes","prix":3500,"categorie":"Plats","disponible":true,"image":"\u002Fimages\u002Fndole-crevettes.jpg"},{"id":"d2","nom":"Poulet DG","prix":4000,"categorie":"Plats","disponible":true,"image":"\u002Fimages\u002Fpoulet-dg.jpg"},{"id":"d3","nom":"Poisson braisé + miondo","prix":3000,"categorie":"Grillades","disponible":true,"image":"\u002Fimages\u002Fpoisson-braise.jpg"},{"id":"d4","nom":"Eru + water fufu","prix":2500,"categorie":"Plats","disponible":true,"image":"\u002Fimages\u002Feru-pieds-boeuf.jpg"},{"id":"d5","nom":"Koki + plantain mûr","prix":2000,"categorie":"Végétarien","disponible":true,"image":"\u002Fimages\u002Fkoki-plantain.jpg"},{"id":"d6","nom":"Jus de bissap","prix":1000,"categorie":"Boissons","disponible":true,"image":"\u002Fimages\u002Fbobolo-sauce-arachide.jpg"},{"id":"d7","nom":"Jus de gingembre","prix":1000,"categorie":"Boissons","disponible":false,"image":"\u002Fimages\u002Fpoulets.jpg"}],"h":{},"s":200,"st":"OK","u":"\u002Fapi\u002Fplats.json","rt":"json"},"__nghData__":[{"t":{"7":"t0","12":"t2","13":"t3","14":"t4","15":"t5","16":"t6"},"c":{"7":[{"i":"t0","r":1,"t":{"4":"t1"},"c":{"4":[{"i":"t1","r":1}]}}],"12":[{"i":"t2","r":1,"x":5}],"13":[],"14":[],"15":[],"16":[{"i":"t6","r":3,"t":{"3":"t7","4":"t8","7":"t9"},"c":{"3":[{"i":"t7","r":1}],"4":[],"7":[{"i":"t9","r":1,"t":{"1":"t10","2":"t11"},"c":{"1":[],"2":[{"i":"t11","r":1}]},"x":6},{"i":"t9","r":1,"t":{"1":"t10","2":"t11"},"c":{"1":[{"i":"t10","r":1}],"2":[{"i":"t11","r":1}]}}]}}]}},{}]}</script></body></html>

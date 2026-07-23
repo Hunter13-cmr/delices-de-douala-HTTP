@@ -1,0 +1,160 @@
+<!-- En-tête avec nom du restaurant -->
+<header class="header">
+  <div class="header-content">
+    <h1 class="title">🍽️ {{ restaurantName }}</h1>
+    <p class="subtitle">Découvrez les saveurs authentiques de Douala</p>
+  </div>
+</header>
+
+<!-- Section principale -->
+<main class="container">
+  <!-- Plat du jour en évidence -->
+  <section class="plat-du-jour" *ngIf="platDuJour()">
+    <div class="plat-du-jour-badge">⭐ Plat du jour</div>
+    <div class="plat-du-jour-content">
+      @if (platDuJour()!.image) {
+        <img
+          [src]="platDuJour()!.image"
+          [alt]="platDuJour()!.nom"
+          class="plat-du-jour-image"
+        />
+      }
+      <h2>{{ platDuJour()!.nom }}</h2>
+      <p class="category-badge">{{ platDuJour()!.categorie }}</p>
+      <p class="price">
+        {{ platDuJour()!.prix | currency: 'XAF': 'symbol': '1.0-0' }}
+      </p>
+      <p class="status-plat-jour" [ngClass]="{
+        'available': platDuJour()!.disponible,
+        'unavailable': !platDuJour()!.disponible
+      }">
+        {{ platDuJour()!.disponible ? '✓ Disponible' : '✕ Épuisé' }}
+      </p>
+    </div>
+  </section>
+
+  <!-- Barre de filtre et recherche -->
+  <section class="filters-section">
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="🔍 Chercher un plat..."
+        [(ngModel)]="searchQuery"
+        class="search-input"
+      />
+    </div>
+
+    <div class="categories-filter">
+      <button
+        *ngFor="let cat of categories()"
+        [class.active]="selectedCategory() === cat"
+        (click)="selectCategory(cat)"
+        class="category-btn"
+      >
+        {{ cat }}
+      </button>
+    </div>
+
+    <button
+      *ngIf="searchQuery() !== '' || selectedCategory() !== 'Toutes'"
+      (click)="resetFilters()"
+      class="reset-btn"
+    >
+      🔄 Réinitialiser
+    </button>
+  </section>
+
+  <!-- État de chargement -->
+  @if (menu.isLoading()) {
+    <section class="loading-state">
+      <div class="spinner"></div>
+      <p>Chargement du menu...</p>
+    </section>
+  }
+
+  <!-- État d'erreur -->
+  @else if (menu.error()) {
+    <section class="error-state">
+      <div class="error-icon">⚠️</div>
+      <h2>Impossible de charger le menu</h2>
+      <p>Erreur lors de la connexion au serveur.</p>
+      <button (click)="menu.reload()" class="retry-btn">
+        🔄 Réessayer
+      </button>
+    </section>
+  }
+
+  <!-- Liste des plats -->
+  @else {
+    <!-- Compteur et statistiques -->
+    <div class="stats-bar">
+      <span class="stat">📊 {{ platCount() }} plat(s) trouvé(s)</span>
+      @if (platIndisponiblesCount() > 0) {
+        <span class="stat unavailable-stat">
+          ⭕ {{ platIndisponiblesCount() }} indisponible(s)
+        </span>
+      }
+    </div>
+
+    <!-- Liste vide -->
+    @if (platsFiltres().length === 0) {
+      <section class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h2>Aucun plat ne correspond à votre recherche</h2>
+        <p>Essayez de modifier vos filtres ou votre recherche.</p>
+        <button (click)="resetFilters()" class="reset-btn">
+          🔄 Réinitialiser les filtres
+        </button>
+      </section>
+    }
+
+    <!-- Grille de plats -->
+    <section class="plats-grid">
+      @for (plat of platsFiltres(); track plat.id) {
+        <article
+          [ngClass]="getPlatClasses(plat)"
+          class="plat-card"
+        >
+          <!-- Badge indisponible -->
+          @if (!plat.disponible) {
+            <div class="badge-epuise">Épuisé</div>
+          }
+
+          <!-- Image du plat -->
+          @if (plat.image) {
+            <div class="plat-image-container">
+              <img
+                [src]="plat.image"
+                [alt]="plat.nom"
+                class="plat-image"
+              />
+            </div>
+          }
+
+          <!-- Contenu du plat -->
+          <div class="plat-content">
+            <h3 class="plat-nom">{{ plat.nom }}</h3>
+            <p class="plat-categorie">{{ plat.categorie }}</p>
+            <div class="plat-footer">
+              <span class="plat-prix">
+                {{ plat.prix | currency: 'XAF': 'symbol': '1.0-0' }}
+              </span>
+              <span
+                class="plat-status"
+                [ngClass]="{ available: plat.disponible, unavailable: !plat.disponible }"
+              >
+                {{ plat.disponible ? '✓' : '✕' }}
+              </span>
+            </div>
+          </div>
+        </article>
+      }
+    </section>
+  }
+</main>
+
+<!-- Pied de page -->
+<footer class="footer">
+  <p>© 2026 Délices de Douala - Tous droits réservés</p>
+  <p class="footer-email">📧 contact@delices-douala.cm</p>
+</footer>

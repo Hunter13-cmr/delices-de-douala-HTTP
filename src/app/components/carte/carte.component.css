@@ -106,88 +106,132 @@
 }
 
 /* ============================================
-   PLAT DU JOUR
+   PLAT DU JOUR - DESIGN WAOUH
    ============================================ */
 .plat-du-jour {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.75) 100%);
-  border-radius: 1rem;
-  padding: 2rem;
-  margin-bottom: 3rem;
-  box-shadow: var(--shadow-lg);
   position: relative;
+  border-radius: 2rem;
+  padding: 0;
+  margin-bottom: 3rem;
   overflow: hidden;
-  color: white;
-  animation: slideUp 0.6s ease-out;
-  text-align: center;
-  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(212, 82, 47, 0.3);
+  animation: slideUp 0.8s ease-out, shimmer 3s ease-in-out infinite;
+  isolation: isolate;
 }
 
 .plat-du-jour::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 82, 47, 0.85) 0%,
+    rgba(245, 166, 35, 0.85) 50%,
+    rgba(212, 82, 47, 0.9) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+.plat-du-jour::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/restaurant.jpg') center/cover;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+  z-index: 1;
 }
 
 .plat-du-jour-badge {
+  position: relative;
+  z-index: 2;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.25);
-  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  color: var(--primary-color);
+  padding: 0.6rem 1.4rem;
   border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
-  animation: blink 1.5s ease-in-out infinite;
+  animation: badgePulse 2s ease-in-out infinite, blink 1.5s ease-in-out infinite;
+  letter-spacing: 0.5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .plat-du-jour-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .plat-du-jour h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 800;
   color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 
+    3px 3px 6px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.5px;
+  animation: textGlow 2s ease-in-out infinite;
 }
 
 .category-badge {
+  position: relative;
+  z-index: 2;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 165, 0, 0.9));
+  color: white;
+  padding: 0.4rem 1rem;
   border-radius: 30px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .plat-du-jour .price {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
   color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(255, 255, 255, 0.4);
+  animation: priceHighlight 2s ease-in-out infinite;
 }
 
 .status-plat-jour {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .status-plat-jour.available {
-  color: #2ecc71;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.8), rgba(46, 204, 113, 0.8));
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  animation: statusGlow 2s ease-in-out infinite;
 }
 
 .status-plat-jour.unavailable {
-  color: #e8daef;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(192, 57, 43, 0.8));
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
 }
 
 /* ============================================
@@ -590,10 +634,10 @@
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-20px) rotate(180deg);
   }
 }
 
@@ -603,7 +647,71 @@
     opacity: 1;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    box-shadow: 0 20px 60px rgba(212, 82, 47, 0.3);
+  }
+  50% {
+    box-shadow: 0 25px 70px rgba(212, 82, 47, 0.5), 0 0 40px rgba(245, 166, 35, 0.3);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-2px);
+  }
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 
+      3px 3px 6px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 
+      3px 3px 6px rgba(0, 0, 0, 0.4),
+      0 0 30px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes priceHighlight {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes statusGlow {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(39, 174, 96, 0.7), 0 0 20px rgba(46, 204, 113, 0.5);
   }
 }
 

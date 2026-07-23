@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/restaurant-card/restaurant-card.css"],
-  "sourcesContent": [".card{\r\n\r\n    background:white;\r\n\r\n    border-radius:18px;\r\n\r\n    overflow:hidden;\r\n\r\n    box-shadow:var(--shadow);\r\n\r\n    transition:.2s;\r\n\r\n}\r\n\r\n.card:hover{\r\n\r\n    transform:translateY(-6px);\r\n\r\n}\r\n\r\n.card img{\r\n\r\n    width:100%;\r\n\r\n    height:220px;\r\n\r\n    object-fit:cover;\r\n\r\n}\r\n\r\n.content{\r\n\r\n    padding:20px;\r\n\r\n}\r\n\r\n.content h2{\r\n\r\n    margin-bottom:10px;\r\n\r\n}\r\n\r\n.district{\r\n\r\n    color:#666;\r\n\r\n    margin-bottom:8px;\r\n\r\n}\r\n\r\n.specialty{\r\n\r\n    color:#2E7D32;\r\n\r\n    font-weight:600;\r\n\r\n    margin-bottom:18px;\r\n\r\n}"],
-  "mappings": ";AAAA,CAAC;AAEG,cAAW;AAEX,iBAAc;AAEd,YAAS;AAET,cAAW,IAAI;AAEf,cAAW;AAEf;AAEA,CAdC,IAcI;AAED,aAAU,WAAW;AAEzB;AAEA,CApBC,KAoBK;AAEF,SAAM;AAEN,UAAO;AAEP,cAAW;AAEf;AAEA,CAAC;AAEG,WAAQ;AAEZ;AAEA,CANC,QAMQ;AAEL,iBAAc;AAElB;AAEA,CAAC;AAEG,SAAM;AAEN,iBAAc;AAElB;AAEA,CAAC;AAEG,SAAM;AAEN,eAAY;AAEZ,iBAAc;AAElB;",
-  "names": []
-}

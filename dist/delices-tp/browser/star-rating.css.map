@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/star-rating/star-rating.css"],
-  "sourcesContent": [".stars{\r\n    display:flex;\r\n    gap:6px;\r\n    margin-bottom:10px;\r\n}\r\n\r\n.star{\r\n    font-size:32px;\r\n    color:#d6d6d6;\r\n    cursor:pointer;\r\n    transition:all .25s ease;\r\n}\r\n\r\n.star:hover{\r\n    transform:scale(1.2);\r\n}\r\n\r\n.filled{\r\n    color:#FFC107;\r\n}\r\n\r\n.rating-text{\r\n    min-height:24px;\r\n    font-weight:600;\r\n    transition:all .3s ease;\r\n}\r\n\r\n.preview{\r\n    color:#ff9800;\r\n    animation:fadeIn .25s;\r\n}\r\n\r\n.success{\r\n    color:#2e7d32;\r\n}\r\n\r\n.hint{\r\n    color:#777;\r\n    font-style:italic;\r\n}\r\n\r\n@keyframes fadeIn{\r\n\r\n    from{\r\n        opacity:0;\r\n        transform:translateY(6px);\r\n    }\r\n\r\n    to{\r\n        opacity:1;\r\n        transform:translateY(0);\r\n    }\r\n\r\n}"],
-  "mappings": ";AAAA,CAAC;AACG,WAAQ;AACR,OAAI;AACJ,iBAAc;AAClB;AAEA,CAAC;AACG,aAAU;AACV,SAAM;AACN,UAAO;AACP,cAAW,IAAI,KAAK;AACxB;AAEA,CAPC,IAOI;AACD,aAAU,MAAM;AACpB;AAEA,CAAC;AACG,SAAM;AACV;AAEA,CAAC;AACG,cAAW;AACX,eAAY;AACZ,cAAW,IAAI,IAAI;AACvB;AAEA,CAAC;AACG,SAAM;AACN,aAAU,OAAO;AACrB;AAEA,CAAC;AACG,SAAM;AACV;AAEA,CAAC;AACG,SAAM;AACN,cAAW;AACf;AAEA,WAZc;AAcV;AACI,aAAQ;AACR,eAAU,WAAW;AACzB;AAEA;AACI,aAAQ;AACR,eAAU,WAAW;AACzB;AAEJ;",
-  "names": []
-}

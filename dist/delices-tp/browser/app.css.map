@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/app.css"],
-  "sourcesContent": ["/**\r\n * Global app styles\r\n * Les styles sp\u00E9cifiques sont dans carte.component.css\r\n */\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nhtml,\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n}\r\n\r\n:host {\r\n  display: block;\r\n}"],
-  "mappings": ";AAKA;AACE,cAAY;AACZ,UAAQ;AACR,WAAS;AACX;AAEA;AACA;AACE,UAAQ;AACR,WAAS;AACT;AAAA,IAAa,UAAU;AAAA,IAAE,MAAM;AAAA,IAAE,MAAM;AAAA,IAAE,OAAO;AAAA,IAAE;AACpD;AAEA;AACE,WAAS;AACX;",
-  "names": []
-}

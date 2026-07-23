@@ -109,7 +109,7 @@
    PLAT DU JOUR
    ============================================ */
 .plat-du-jour {
-  background: transparent;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.75) 100%);
   border-radius: 1rem;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -119,6 +119,7 @@
   color: white;
   animation: slideUp 0.6s ease-out;
   text-align: center;
+  backdrop-filter: blur(8px);
 }
 
 .plat-du-jour::before {
@@ -128,7 +129,7 @@
   right: -10%;
   width: 300px;
   height: 300px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
@@ -154,6 +155,8 @@
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .category-badge {
@@ -170,6 +173,8 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .status-plat-jour {
@@ -443,6 +448,7 @@
   border-radius: 0.75rem;
   margin-bottom: 1rem;
   box-shadow: var(--shadow-md);
+  border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .plat-content {

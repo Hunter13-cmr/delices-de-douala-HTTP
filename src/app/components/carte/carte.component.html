@@ -9,73 +9,83 @@
 <!-- Section principale -->
 <main class="container">
   <!-- Plat du jour en évidence -->
-  <section class="plat-du-jour" *ngIf="platDuJour()">
-    <div class="plat-du-jour-badge">⭐ Plat du jour</div>
-    <div class="plat-du-jour-content">
-      @if (platDuJour()!.image) {
-        <img
-          [src]="platDuJour()!.image"
-          [alt]="platDuJour()!.nom"
-          class="plat-du-jour-image"
-        />
-      }
-      <h2>{{ platDuJour()!.nom }}</h2>
-      <p class="category-badge">{{ platDuJour()!.categorie }}</p>
-      <p class="price">
-        {{ platDuJour()!.prix | currency: 'XAF': 'symbol': '1.0-0' }}
-      </p>
-      <p class="status-plat-jour" [ngClass]="{
-        'available': platDuJour()!.disponible,
-        'unavailable': !platDuJour()!.disponible
-      }">
-        {{ platDuJour()!.disponible ? '✓ Disponible' : '✕ Épuisé' }}
-      </p>
-    </div>
-  </section>
+  @if (platDuJour()) {
+    <section class="plat-du-jour">
+      <div class="plat-du-jour-badge">⭐ Plat du jour</div>
+      <div class="plat-du-jour-content">
+        @if (platDuJour()?.image) {
+          <img
+            [src]="platDuJour()!.image"
+            [alt]="getAltText(platDuJour()!)"
+            class="plat-du-jour-image"
+          />
+        }
+        <h2>{{ platDuJour()!.nom }}</h2>
+        <p class="category-badge">{{ platDuJour()!.categorie }}</p>
+        <p class="price">
+          {{ platDuJour()!.prix | currency: 'XAF': 'symbol': '1.0-0' }}
+        </p>
+        <p class="status-plat-jour" [ngClass]="{
+          'available': platDuJour()!.disponible,
+          'unavailable': !platDuJour()!.disponible
+        }">
+          {{ platDuJour()!.disponible ? '✓ Disponible' : '✕ Épuisé' }}
+        </p>
+      </div>
+    </section>
+  }
 
   <!-- Barre de filtre et recherche -->
-  <section class="filters-section">
+  <section class="filters-section" aria-label="Filtres et recherche">
     <div class="search-box">
+      <label for="search-input" class="visually-hidden">Rechercher un plat</label>
       <input
+        id="search-input"
         type="text"
         placeholder="🔍 Chercher un plat..."
         [(ngModel)]="searchQuery"
         class="search-input"
+        aria-label="Rechercher un plat par nom"
       />
     </div>
 
-    <div class="categories-filter">
-      <button
-        *ngFor="let cat of categories()"
-        [class.active]="selectedCategory() === cat"
-        (click)="selectCategory(cat)"
-        class="category-btn"
-      >
-        {{ cat }}
-      </button>
+    <div class="categories-filter" role="group" aria-label="Filtres par catégorie">
+      @for (cat of categories(); track cat) {
+        <button
+          [class.active]="selectedCategory() === cat"
+          (click)="selectCategory(cat)"
+          class="category-btn"
+          [attr.aria-pressed]="selectedCategory() === cat"
+          [id]="'cat-' + cat.toLowerCase()"
+        >
+          {{ cat }}
+        </button>
+      }
     </div>
 
-    <button
-      *ngIf="searchQuery() !== '' || selectedCategory() !== 'Toutes'"
-      (click)="resetFilters()"
-      class="reset-btn"
-    >
-      🔄 Réinitialiser
-    </button>
+    @if (searchQuery() !== '' || selectedCategory() !== 'Toutes') {
+      <button
+        (click)="resetFilters()"
+        class="reset-btn"
+        aria-label="Réinitialiser tous les filtres"
+      >
+        🔄 Réinitialiser
+      </button>
+    }
   </section>
 
   <!-- État de chargement -->
   @if (menu.isLoading()) {
-    <section class="loading-state">
-      <div class="spinner"></div>
+    <section class="loading-state" aria-live="polite" aria-busy="true">
+      <div class="spinner" role="status" aria-label="Chargement en cours"></div>
       <p>Chargement du menu...</p>
     </section>
   }
 
   <!-- État d'erreur -->
   @else if (menu.error()) {
-    <section class="error-state">
-      <div class="error-icon">⚠️</div>
+    <section class="error-state" aria-live="assertive">
+      <div class="error-icon" aria-hidden="true">⚠️</div>
       <h2>Impossible de charger le menu</h2>
       <p>Erreur lors de la connexion au serveur.</p>
       <button (click)="menu.reload()" class="retry-btn">
@@ -125,8 +135,9 @@
             <div class="plat-image-container">
               <img
                 [src]="plat.image"
-                [alt]="plat.nom"
+                [alt]="getAltText(plat)"
                 class="plat-image"
+                loading="lazy"
               />
             </div>
           }

@@ -140,4 +140,11 @@ export class CarteComponent {
       'plat-disponible': plat.disponible,
     };
   }
+
+  /**
+   * Génère un alt text descriptif pour un plat (accessibilité)
+   */
+  getAltText(plat: Plat): string {
+    return `Photo de ${plat.nom}, plat ${plat.categorie} à ${plat.prix} FCFA${plat.disponible ? ', disponible' : ', épuisé'}`;
+  }
 }

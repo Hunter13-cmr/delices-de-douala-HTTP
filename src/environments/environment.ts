@@ -6,5 +6,5 @@ export const environment = {
   production: true,
   serverUrl: '',
   restaurantName: 'Délices de Douala',
-  restaurantEmail: 'contact@delices-douala.cm',
+  restaurantEmail: 'contact@delices-douala.cm', 
 };

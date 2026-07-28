@@ -45,4 +45,19 @@ export class MenuService {
   supprimer(id: string) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+
+  /**
+   * Valide la structure d'un plat (runtime safety)
+   */
+  validatePlat(plat: any): boolean {
+    return (
+      plat &&
+      typeof plat.id === 'string' &&
+      typeof plat.nom === 'string' &&
+      typeof plat.prix === 'number' &&
+      typeof plat.categorie === 'string' &&
+      typeof plat.disponible === 'boolean' &&
+      typeof plat.image === 'string'
+    );
+  }
 }
